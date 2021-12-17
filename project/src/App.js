@@ -10,19 +10,26 @@ import './App.css';
 
 import Home from './Components/Home';
 import About from './Components/About';
-import BasicForm from './Components/BasicForm';
+// import BasicForm from './Components/BasicForm';
 import Products from './Services/Products';
 import Product from './Services/Product';
 import Navbar from './Components/Navbar';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
+import DataProvider from './Context/Context';
+import Cart from './Components/Cart';
+import Profile from './Components/Profile';
+
 
 // import Shop from './Services/Shop';
 
 function App() {
   return (
+    <DataProvider>
     <Router>
       <div className="App">
         <header>
-          <h1>E-COMMERCE APP</h1>
+          {/* <h1>E-COMMERCE APP</h1> */}
           <Navbar />
         </header>
         {/* <nav>
@@ -41,18 +48,19 @@ function App() {
             </li>
           </ul>
         </nav> */}
-
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-          <Route path="/form" element={<BasicForm />}/>
-          <Route path="/products" element={<Products />}/>
-          <Route path="/products/:id" element={<Product />}/>
-          
-          {/* <Route path="/shop" element={<Shop />} /> */}
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/about" element={<About />} />
+            <Route exact path="/login" element={<Login />}/>
+            <Route exact path="/register" element={<Signup />}/>
+            <Route path="/products" element={<Products />}/>
+            <Route path="/products/:id" element={<Product />}/>
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     </Router>
+    </DataProvider> 
   );
 }
 

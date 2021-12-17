@@ -74,7 +74,7 @@ const Products = () => {
                     <p class="card-text lead fw-bold">
                       ${product.price}
                     </p>
-                    <NavLink to={`/products/${product.id}`} class="btn btn-outline-dark">
+                    <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark">
                       Buy Now
                     </NavLink>
                   </div>
